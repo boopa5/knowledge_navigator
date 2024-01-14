@@ -50,12 +50,16 @@
     </style>
 </head>
 <body>
-    <embed src="{{ '/static/uploads/' + file }}" />
+    <embed src="{{ '/static/' + file }}" />
 
     <form method="post">
         <label for="question">Your Question:</label>
         <textarea id="question" name="question" required>{{ question }}</textarea>
         <input type="submit" value="Submit Question">
+        <div>Result Pages</div>
+        {% for p in res_pages %}
+            <p>{{p}}</p>
+        {% endfor %}
     </form>
 </body>
 </html>
